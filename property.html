@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeHaven | Property Details</title>
+    <link rel="stylesheet" href="property.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">HomeHaven</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="property-detail-container">
+           
+        </div>
+        
+        <div class="similar-properties">
+            <h2>Similar Properties</h2>
+            <div class="property-cards" id="similar-properties-container">
+               
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About HomeHaven</h3>
+                <p>HomeHaven is your trusted partner in finding the perfect rental home. We offer a wide selection of properties across major cities in India.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="properties.html">Properties</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@homehaven.com</p>
+                <p>Phone: +91 9876543210</p>
+                <p>Address: 123 Main Street, Mumbai</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 HomeHaven. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        const properties = [
+    {
+        id: 1,
+        title: "Modern 2BHK Apartment",
+        location: "pune",
+        type: "apartment",
+        price: 25000,
+        image: "image1.png",
+        bedrooms: 2,
+        bathrooms: 2,
+        area: 1200,
+        furnished: "Semi-Furnished",
+        description: "This modern 2BHK apartment is perfect for small families or professionals. Located in a prime area of Pune, it offers convenient access to shopping centers, schools, and public transportation. The apartment features spacious rooms with good ventilation and natural light.",
+        amenities: ["24/7 Security", "Power Backup", "Lift", "Parking", "Children's Play Area", "Gym", "Swimming Pool"],
+        availableFrom: "April 1, 2025",
+        depositAmount: "₹50,000",
+        maintenanceFee: "₹2,500/month",
+        contactPerson: "Rahul Sharma",
+        contactPhone: "+91 9876543210"
+    },
+    {
+        id: 2,
+        title: "Luxury Villa with Garden",
+        location: "mumbai",
+        type: "villa",
+        price: 90000,
+        image: "image2.png",
+        bedrooms: 4,
+        bathrooms: 4,
+        area: 3500,
+        furnished: "Fully-Furnished",
+        description: "Experience luxury living in this fully-furnished 4BHK villa in Mumbai. The property features a beautiful garden, modern interiors, and high-end amenities. Located in a gated community with 24/7 security, this villa offers privacy and comfort for families looking for a premium lifestyle.",
+        amenities: ["24/7 Security", "Private Garden", "Modular Kitchen", "Home Theater", "Swimming Pool", "Gym", "Parking"],
+        availableFrom: "May 15, 2025",
+        depositAmount: "₹200,000",
+        maintenanceFee: "₹10,000/month",
+        contactPerson: "Priya Kapoor",
+        contactPhone: "+91 9876543211"
+    },
+    {
+        id: 3,
+        title: "Compact Studio Apartment",
+        location: "bangalore",
+        type: "apartment",
+        price: 18000,
+        image: "image3.png",
+        bedrooms: 1,
+        bathrooms: 1,
+        area: 600,
+        furnished: "Unfurnished",
+        description: "Cozy studio apartment in Bangalore, perfect for singles or couples. The apartment offers a modern living space with a kitchen area and attached bathroom. Located in a vibrant neighborhood with easy access to tech parks, restaurants, and entertainment venues.",
+        amenities: ["Security", "Lift", "Parking", "Visitor Parking", "Water Supply"],
+        availableFrom: "April 10, 2025",
+        depositAmount: "₹36,000",
+        maintenanceFee: "₹1,800/month",
+        contactPerson: "Arun Kumar",
+        contactPhone: "+91 9876543212"
+    },
+    {
+        id: 4,
+        title: "Spacious 3BHK House",
+        location: "hyderabad",
+        type: "house",
+        price: 35000,
+        image: "image4.png",
+        bedrooms: 3,
+        bathrooms: 2,
+        area: 1800,
+        furnished: "Semi-Furnished",
+        description: "A spacious 3BHK house in a peaceful locality of Hyderabad. This property features a large living room, separate dining area, and well-designed bedrooms. Perfect for families seeking a comfortable living space with modern amenities and good connectivity.",
+        amenities: ["Parking", "Garden", "Water Supply", "Security", "Power Backup"],
+        availableFrom: "April 15, 2025",
+        depositAmount: "₹70,000",
+        maintenanceFee: "₹3,000/month",
+        contactPerson: "Suresh Reddy",
+        contactPhone: "+91 9876543213"
+    },
+    {
+        id: 5,
+        title: "Premium Penthouse",
+        location: "delhi",
+        type: "penthouse",
+        price: 120000,
+        image: "image5.png",
+        bedrooms: 4,
+        bathrooms: 3,
+        area: 2200,
+        furnished: "Fully-Furnished",
+        description: "Luxurious 4BHK penthouse in an upscale neighborhood of Delhi. This stunning property offers panoramic city views, high ceilings, and premium finishes throughout. The penthouse includes a private terrace, entertainment area, and designer interiors.",
+        amenities: ["24/7 Security", "Private Terrace", "Jacuzzi", "Home Automation", "Concierge Service", "Gym", "Swimming Pool", "Parking"],
+        availableFrom: "May 10, 2025",
+        depositAmount: "₹250,000",
+        maintenanceFee: "₹15,000/month",
+        contactPerson: "Ananya Gupta",
+        contactPhone: "+91 9876543214"
+    },
+    {
+        id: 6,
+        title: "Cozy 2BHK House",
+        location: "pune",
+        type: "house",
+        price: 28000,
+        image: "image6.png",
+        bedrooms: 2,
+        bathrooms: 2,
+        area: 1400,
+        furnished: "Semi-Furnished",
+        description: "Charming 2BHK house in a family-friendly neighborhood of Pune. The property features a well-designed layout with spacious rooms and a small garden area. Located close to schools, markets, and public transport, it offers convenience and comfort.",
+        amenities: ["Parking", "Small Garden", "Water Supply", "Security", "Power Backup"],
+        availableFrom: "April 20, 2025",
+        depositAmount: "₹56,000",
+        maintenanceFee: "₹2,200/month",
+        contactPerson: "Deepak Patil",
+        contactPhone: "+91 9876543215"
+    },
+    {
+        id: 7,
+        title: "Budget 1BHK Apartment",
+        location: "mumbai",
+        type: "apartment",
+        price: 15000,
+        image: "image7.png",
+        bedrooms: 1,
+        bathrooms: 1,
+        area: 750,
+        furnished: "Unfurnished",
+        description: "Affordable 1BHK apartment in Mumbai, ideal for working professionals or students. The apartment offers a functional layout with a separate kitchen and balcony. Well-connected to major business hubs and educational institutions via public transport.",
+        amenities: ["Security", "Lift", "Water Supply", "Visitor Parking"],
+        availableFrom: "April 5, 2025",
+        depositAmount: "₹30,000",
+        maintenanceFee: "₹1,500/month",
+        contactPerson: "Sanjay Mehta",
+        contactPhone: "+91 9876543216"
+    },
+    {
+        id: 8,
+        title: "Luxury 4BHK Penthouse",
+        location: "bangalore",
+        type: "penthouse",
+        price: 150000,
+        image: "image8.png",
+        bedrooms: 4,
+        bathrooms: 4,
+        area: 3000,
+        furnished: "Fully-Furnished",
+        description: "Opulent 4BHK penthouse in the heart of Bangalore. This spectacular property offers expansive living spaces, floor-to-ceiling windows, and premium imported furnishings. Features include a private terrace with stunning city views, home theater, and smart home systems.",
+        amenities: ["24/7 Security", "Private Terrace", "Home Theater", "Smart Home", "Swimming Pool", "Gym", "Spa", "Parking", "Concierge Service"],
+        availableFrom: "June 1, 2025",
+        depositAmount: "₹300,000",
+        maintenanceFee: "₹20,000/month",
+        contactPerson: "Vivek Nair",
+        contactPhone: "+91 9876543217"
+    },
+    {
+        id: 9,
+        title: "Garden Villa",
+        location: "hyderabad",
+        type: "villa",
+        price: 75000,
+        image: "image9.png",
+        bedrooms: 3,
+        bathrooms: 3,
+        area: 2500,
+        furnished: "Semi-Furnished",
+        description: "Beautiful 3BHK villa with lush gardens in a premium gated community in Hyderabad. The property features elegant interiors, spacious living areas, and a landscaped garden. Perfect for families looking for a peaceful and luxurious living experience.",
+        amenities: ["24/7 Security", "Private Garden", "Modular Kitchen", "Power Backup", "Community Club House", "Swimming Pool", "Gym"],
+        availableFrom: "May 5, 2025",
+        depositAmount: "₹150,000",
+        maintenanceFee: "₹8,000/month",
+        contactPerson: "Kiran Kumar",
+        contactPhone: "+91 9876543218"
+    },
+    {
+        id: 10,
+        title: "Compact 2BHK House",
+        location: "delhi",
+        type: "house",
+        price: 30000,
+        image: "image10.png",
+        bedrooms: 2,
+        bathrooms: 2,
+        area: 1100,
+        furnished: "Fully-Furnished",
+        description: "Fully-furnished 2BHK house in a well-connected area of Delhi. The property offers modern interiors, essential appliances, and comfortable living spaces. Located in a safe residential area with easy access to markets, hospitals, and public transport.",
+        amenities: ["Fully-Equipped Kitchen", "Air Conditioning", "Parking", "Security", "Power Backup"],
+        availableFrom: "April 10, 2025",
+        depositAmount: "₹60,000",
+        maintenanceFee: "₹2,500/month",
+        contactPerson: "Neha Verma",
+        contactPhone: "+91 9876543219"
+    },
+    {
+        id: 11,
+        title: "Sea View Apartment",
+        location: "pune",
+        type: "apartment",
+        price: 85000,
+        image: "image11.png",
+        bedrooms: 3,
+        bathrooms: 2,
+        area: 1750,
+        furnished: "Fully-Furnished",
+        description: "Premium 3BHK apartment in an upscale high-rise complex in Pune. This property offers modern living with luxurious interiors, large balconies, and stunning views. Located in a prestigious neighborhood with excellent amenities and facilities.",
+        amenities: ["24/7 Security", "Lift", "Swimming Pool", "Gym", "Club House", "Indoor Games", "Children's Play Area", "Landscaped Gardens"],
+        availableFrom: "May 15, 2025",
+        depositAmount: "₹170,000",
+        maintenanceFee: "₹8,500/month",
+        contactPerson: "Amit Desai",
+        contactPhone: "+91 9876543220"
+    },
+    {
+        id: 12,
+        title: "Lake View Villa",
+        location: "mumbai",
+        type: "villa",
+        price: 110000,
+        image: "image12.png",
+        bedrooms: 4,
+        bathrooms: 4,
+        area: 3200,
+        furnished: "Fully-Furnished",
+        description: "Exquisite 4BHK villa overlooking a serene lake in Mumbai. This property offers a perfect blend of luxury and natural beauty with spacious living areas, premium interiors, and panoramic views. Nestled in a secure community with top-notch amenities.",
+        amenities: ["24/7 Security", "Private Garden", "Jacuzzi", "Modular Kitchen", "Home Theater", "Swimming Pool", "Gym", "Parking", "BBQ Area"],
+        availableFrom: "June 10, 2025",
+        depositAmount: "₹220,000",
+        maintenanceFee: "₹12,000/month",
+        contactPerson: "Rishi Shah",
+        contactPhone: "+91 9876543221"
+    },
+    {
+        id: 13,
+        title: "Budget Studio",
+        location: "bangalore",
+        type: "studio",
+        price: 12000,
+        image: "image13.png",
+        bedrooms: 1,
+        bathrooms: 1,
+        area: 500,
+        furnished: "Semi-Furnished",
+        description: "Affordable studio apartment in Bangalore, perfect for singles or students. The compact yet functional space includes basic furnishings and essential amenities. Located in a vibrant neighborhood with easy access to IT hubs and educational institutions.",
+        amenities: ["Security", "Water Supply", "Lift", "Parking"],
+        availableFrom: "April 1, 2025",
+        depositAmount: "₹24,000",
+        maintenanceFee: "₹1,200/month",
+        contactPerson: "Varun Menon",
+        contactPhone: "+91 9876543222"
+    },
+    {
+        id: 14,
+        title: "Hillside Bungalow",
+        location: "hyderabad",
+        type: "bungalow",
+        price: 130000,
+        image: "image14.png",
+        bedrooms: 4,
+        bathrooms: 3,
+        area: 2800,
+        furnished: "Fully-Furnished",
+        description: "Spectacular 4BHK bungalow nestled in the scenic hills of Hyderabad. This magnificent property offers luxury living with breathtaking views, spacious interiors, and premium amenities. Perfect for those seeking privacy, comfort, and an exclusive lifestyle.",
+        amenities: ["24/7 Security", "Private Pool", "Home Theater", "Smart Home", "Terrace Garden", "Gym", "BBQ Area", "Parking"],
+        availableFrom: "June 15, 2025",
+        depositAmount: "₹260,000",
+        maintenanceFee: "₹15,000/month",
+        contactPerson: "Rajesh Rao",
+        contactPhone: "+91 9876543223"
+    },
+    {
+        id: 15,
+        title: "Modern 3BHK Apartment",
+        location: "delhi",
+        type: "apartment",
+        price: 32000,
+        image: "image15.png",
+        bedrooms: 3,
+        bathrooms: 2,
+        area: 1600,
+        furnished: "Semi-Furnished",
+        description: "Contemporary 3BHK apartment in a well-maintained complex in Delhi. The property features spacious rooms, good ventilation, and quality fixtures. Located in a convenient area with proximity to shopping centers, schools, and healthcare facilities.",
+        amenities: ["24/7 Security", "Lift", "Power Backup", "Parking", "Children's Play Area", "Community Hall"],
+        availableFrom: "April 20, 2025",
+        depositAmount: "₹64,000",
+        maintenanceFee: "₹3,200/month",
+        contactPerson: "Alok Sharma",
+        contactPhone: "+91 9876543224"
+    },
+    {
+        id: 16,
+        title: "Countryside Villa",
+        location: "pune",
+        type: "villa",
+        price: 65000,
+        image: "image16.png",
+        bedrooms: 3,
+        bathrooms: 3,
+        area: 2300,
+        furnished: "Semi-Furnished",
+        description: "Charming 3BHK villa on the outskirts of Pune with a serene countryside atmosphere. The property offers a perfect escape from city hustle with spacious living areas, lush gardens, and peaceful surroundings. Ideal for nature lovers and families.",
+        amenities: ["24/7 Security", "Private Garden", "Modular Kitchen", "Power Backup", "Parking", "Water Supply"],
+        availableFrom: "May 1, 2025",
+        depositAmount: "₹130,000",
+        maintenanceFee: "₹6,500/month",
+        contactPerson: "Siddharth Joshi",
+        contactPhone: "+91 9876543225"
+    },
+    {
+        id: 17,
+        title: "Luxury Service Apartment",
+        location: "mumbai",
+        type: "apartment",
+        price: 70000,
+        image: "image17.png",
+        bedrooms: 2,
+        bathrooms: 2,
+        area: 1400,
+        furnished: "Fully-Furnished",
+        description: "Premium service apartment in the heart of Mumbai with hotel-like amenities. This fully-furnished 2BHK offers elegant interiors, high-end appliances, and housekeeping services. Perfect for corporate executives and business travelers seeking comfort and convenience.",
+        amenities: ["24/7 Security", "Housekeeping", "Room Service", "Concierge", "Lift", "Gym", "Swimming Pool", "Business Center", "Parking"],
+        availableFrom: "April 15, 2025",
+        depositAmount: "₹140,000",
+        maintenanceFee: "₹10,000/month",
+        contactPerson: "Meera Bhatia",
+        contactPhone: "+91 9876543226"
+    },
+    {
+        id: 18,
+        title: "Cozy 1BHK House",
+        location: "bangalore",
+        type: "house",
+        price: 22000,
+        image: "image18.png",
+        bedrooms: 1,
+        bathrooms: 1,
+        area: 900,
+        furnished: "Unfurnished",
+        description: "Comfortable 1BHK independent house in a quiet residential area of Bangalore. The property offers a functional layout with a separate kitchen, small yard, and good ventilation. Located in a safe neighborhood with easy access to essential services.",
+        amenities: ["Water Supply", "Power Backup", "Parking", "Security"],
+        availableFrom: "April 5, 2025",
+        depositAmount: "₹44,000",
+        maintenanceFee: "₹1,500/month",
+        contactPerson: "Lakshmi Rao",
+        contactPhone: "+91 9876543227"
+    },
+    {
+        id: 19,
+        title: "Family 3BHK Apartment",
+        location: "hyderabad",
+        type: "apartment",
+        price: 38000,
+        image: "image19.png",
+        bedrooms: 3,
+        bathrooms: 2,
+        area: 1700,
+        furnished: "Semi-Furnished",
+        description: "Spacious 3BHK apartment designed for family living in Hyderabad. The property features well-proportioned rooms, quality fixtures, and a practical layout. Located in a residential complex with good amenities and proximity to schools and hospitals.",
+        amenities: ["24/7 Security", "Lift", "Power Backup", "Parking", "Children's Play Area", "Gym", "Community Hall"],
+        availableFrom: "April 25, 2025",
+        depositAmount: "₹76,000",
+        maintenanceFee: "₹3,800/month",
+        contactPerson: "Venkat Reddy",
+        contactPhone: "+91 9876543228"
+    },
+    {
+        id: 20,
+        title: "Executive Penthouse",
+        location: "delhi",
+        type: "penthouse",
+        price: 135000,
+        image: "image20.png",
+        bedrooms: 4,
+        bathrooms: 3,
+        area: 2600,
+        furnished: "Fully-Furnished",
+        description: "Sophisticated 4BHK penthouse in an elite neighborhood of Delhi. This lavish property offers expansive living spaces, designer interiors, and premium finishes. Features include a private terrace, entertainment area, and panoramic city views.",
+        amenities: ["24/7 Security", "Private Terrace", "Home Theater", "Smart Home", "Swimming Pool", "Gym", "Spa", "Concierge Service", "Parking"],
+        availableFrom: "June 5, 2025",
+        depositAmount: "₹270,000",
+        maintenanceFee: "₹18,000/month",
+        contactPerson: "Rohit Malhotra",
+        contactPhone: "+91 9876543229"
+    },
+    {
+        id: 21,
+        title: "Heritage Bungalow",
+        location: "pune",
+        type: "bungalow",
+        price: 55000,
+        image: "image21.png",
+        bedrooms: 2,
+        bathrooms: 1,
+        area: 1100,
+        furnished: "Fully-Furnished",
+        description: "Charming 2BHK heritage bungalow with classic architecture in Pune. This unique property combines old-world charm with modern comforts, featuring high ceilings, wooden floors, and a cozy veranda. Located in a tranquil neighborhood with historical significance.",
+        amenities: ["Private Garden", "Vintage Furniture", "Modern Kitchen", "Parking", "Security"],
+        availableFrom: "May 10, 2025",
+        depositAmount: "₹110,000",
+        maintenanceFee: "₹5,000/month",
+        contactPerson: "Pratap Kulkarni",
+        contactPhone: "+91 9876543230"
+    },
+    {
+        id: 22,
+        title: "Beachfront Studio",
+        location: "mumbai",
+        type: "studio",
+        price: 45000,
+        image: "image22.png",
+        bedrooms: 1,
+        bathrooms: 1,
+        area: 650,
+        furnished: "Fully-Furnished",
+        description: "Luxurious studio apartment with stunning sea views in Mumbai. This compact yet stylish property offers modern furnishings, high-end finishes, and a private balcony overlooking the beach. Perfect for those seeking a premium coastal lifestyle.",
+        amenities: ["24/7 Security", "Lift", "Private Balcony", "Gym", "Swimming Pool", "Parking", "Power Backup"],
+        availableFrom: "April 20, 2025",
+        depositAmount: "₹90,000",
+        maintenanceFee: "₹5,500/month",
+        contactPerson: "Aditi Sharma",
+        contactPhone: "+91 9876543231"
+    },
+    {
+        id: 23,
+        title: "IT Park Studio",
+        location: "bangalore",
+        type: "studio",
+        price: 32000,
+        image: "image23.png",
+        bedrooms: 1,
+        bathrooms: 1,
+        area: 550,
+        furnished: "Semi-Furnished",
+        description: "Modern studio apartment located close to major IT parks in Bangalore. This well-designed space offers contemporary living with essential furnishings and amenities. Ideal for IT professionals seeking convenience and comfort close to work.",
+        amenities: ["24/7 Security", "Lift", "Power Backup", "Gym", "Parking", "High-Speed Internet Connectivity"],
+        availableFrom: "April 15, 2025",
+        depositAmount: "₹64,000",
+        maintenanceFee: "₹3,200/month",
+        contactPerson: "Girish Patel",
+        contactPhone: "+91 9876543232"
+    },
+    {
+        id: 24,
+        title: "Duplex Bungalow",
+        location: "hyderabad",
+        type: "bungalow",
+        price: 60000,
+        image: "image24.png",
+        bedrooms: 3,
+        bathrooms: 3,
+        area: 2100,
+        furnished: "Semi-Furnished",
+        description: "Elegant 3BHK duplex bungalow in a premium locality of Hyderabad. This spacious property features a modern design with two levels, offering separate living and sleeping spaces. Includes a small garden and ample parking space.",
+        amenities: ["Private Garden", "Modular Kitchen", "Power Backup", "Security", "Parking", "Water Supply"],
+        availableFrom: "May 5, 2025",
+        depositAmount: "₹120,000",
+        maintenanceFee: "₹6,000/month",
+        contactPerson: "Sudha Reddy",
+        contactPhone: "+91 9876543233"
+    },
+    {
+        id: 25,
+        title: "Riverside Villa",
+        location: "delhi",
+        type: "villa",
+        price: 95000,
+        image: "image25.png",
+        bedrooms: 3,
+        bathrooms: 2,
+        area: 1800,
+        furnished: "Fully-Furnished",
+        description: "Beautiful 3BHK villa with river views in Delhi. This fully-furnished property offers a serene living experience with premium interiors, landscaped gardens, and modern amenities. Located in a secure gated community with excellent facilities.",
+        amenities: ["24/7 Security", "Private Garden", "Modular Kitchen", "Power Backup", "Swimming Pool", "Gym", "Club House", "Parking"],
+        availableFrom: "May 20, 2025",
+        depositAmount: "₹190,000",
+        maintenanceFee: "₹9,500/month",
+        contactPerson: "Vikram Khanna",
+        contactPhone: "+91 9876543234"
+    },
+    {
+        id: 26,
+        title: "Mountain View Studio",
+        location: "pune",
+        type: "studio",
+        price: 25000,
+        image: "image26.png",
+        bedrooms: 1,
+        bathrooms: 1,
+        area: 600,
+        furnished: "Fully-Furnished",
+        description: "Charming studio apartment with scenic mountain views in Pune. This fully-furnished property offers comfortable living with a practical layout and quality furnishings. Perfect for professionals seeking a peaceful retreat close to nature.",
+        amenities: ["24/7 Security", "Lift", "Power Backup", "Parking", "Water Supply", "Scenic Views"],
+        availableFrom: "April 10, 2025",
+        depositAmount: "₹50,000",
+        maintenanceFee: "₹2,500/month",
+        contactPerson: "Nisha Agarwal",
+        contactPhone: "+91 9876543235"
+    },
+    {
+        id: 27,
+        title: "Urban Penthouse",
+        location: "mumbai",
+        type: "penthouse",
+        price: 140000,
+        image: "image27.png",
+        bedrooms: 3,
+        bathrooms: 3,
+        area: 2200,
+        furnished: "Fully-Furnished",
+        description: "Sophisticated 3BHK penthouse in the urban heart of Mumbai. This luxurious property offers premium living with designer interiors, high ceilings, and panoramic city views. Features include a private terrace, entertainment area, and smart home systems.",
+        amenities: ["24/7 Security", "Private Terrace", "Home Theater", "Smart Home", "Swimming Pool", "Gym", "Concierge Service", "Parking"],
+        availableFrom: "June 1, 2025",
+        depositAmount: "₹280,000",
+        maintenanceFee: "₹17,000/month",
+        contactPerson: "Arjun Kapoor",
+        contactPhone: "+91 9876543236"
+    },
+    {
+        id: 28,
+        title: "Luxury Bungalow",
+        location: "bangalore",
+        type: "bungalow",
+        price: 85000,
+        image: "image28.png",
+        bedrooms: 4,
+        bathrooms: 3,
+        area: 3200,
+        furnished: "Semi-Furnished",
+        description: "Exquisite 4BHK bungalow in an exclusive neighborhood of Bangalore. This spacious property offers luxurious living with high-quality finishes, large rooms, and a beautiful garden. Perfect for families seeking privacy, space, and premium amenities.",
+        amenities: ["24/7 Security", "Private Garden", "Modular Kitchen", "Power Backup", "Water Supply", "Parking"],
+        availableFrom: "May 15, 2025",
+        depositAmount: "₹170,000",
+        maintenanceFee: "₹8,500/month",
+        contactPerson: "Rahul Dravid",
+        contactPhone: "+91 9876543237"
+    },
+    {
+        id: 29,
+        title: "Contemporary Villa",
+        location: "hyderabad",
+        type: "villa",
+        price: 95000,
+        image: "image29.png",
+        bedrooms: 3,
+        bathrooms: 3,
+        area: 2400,
+        furnished: "Fully-Furnished",
+        description: "Modern 3BHK villa with contemporary architecture in Hyderabad. This stylish property features sleek interiors, open plan living spaces, and premium amenities. Located in a secure gated community with excellent facilities and landscaped surroundings.",
+        amenities: ["24/7 Security", "Private Garden", "Modular Kitchen", "Smart Home", "Swimming Pool", "Gym", "Club House", "Parking"],
+        availableFrom: "May 25, 2025",
+        depositAmount: "₹190,000",
+        maintenanceFee: "₹9,500/month",
+        contactPerson: "Kamal Reddy",
+        contactPhone: "+91 9876543238"
+    },
+    {
+        id: 30,
+        title: "Eco-Friendly Studio",
+        location: "delhi",
+        type: "studio",
+        price: 40000,
+        image: "image30.png",
+        bedrooms: 1,
+        bathrooms: 1,
+        area: 700,
+        furnished: "Semi-Furnished",
+        description: "Sustainable studio apartment in a green building complex in Delhi. This eco-conscious property features energy-efficient design, recycled materials, and sustainable amenities. Perfect for environmentally conscious individuals seeking a modern, responsible lifestyle.",
+        amenities: ["Solar Power", "Rainwater Harvesting", "Organic Garden", "Recycling Facility", "24/7 Security", "Lift", "Parking"],
+        availableFrom: "April 20, 2025",
+        depositAmount: "₹80,000",
+        maintenanceFee: "₹4,000/month",
+        contactPerson: "Nikhil Sharma",
+        contactPhone: "+91 9876543239"
+    }
+];
+        
+        function getUrlParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+      
+        function displayPropertyDetails() {
+            const propertyId = parseInt(getUrlParam('id'));
+            const property = properties.find(p => p.id === propertyId);
+            
+            if (!property) {
+                document.getElementById('property-detail-container').innerHTML = `
+                    <div style="text-align: center; padding: 3rem;">
+                        <h2>Property not found</h2>
+                        <p>The property you are looking for does not exist.</p>
+                        <a href="properties.html" style="color: #4a9f7b; text-decoration: none;">← Back to Properties</a>
+                    </div>
+                `;
+                return;
+            }
+            
+           
+            const propertyHTML = `
+                <div class="property-details">
+                    <div class="property-header">
+                        <div class="property-images" style="background-image: url('${property.image}')"></div>
+                        <button onclick="window.location.href='properties.html'" class="back-button">← Back to Properties</button>
+                        <div class="property-title">
+                            <h1>${property.title}</h1>
+                            <p>${property.location.charAt(0).toUpperCase() + property.location.slice(1)}</p>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-main">
+                            <div class="property-description">
+                                <h2>About this property</h2>
+                                <p>${property.description}</p>
+                            </div>
+                            <div class="property-features">
+                                <h2>Amenities & Features</h2>
+                                <div class="features-list">
+                                    ${property.amenities.map(amenity => `
+                                        <div class="feature-item">
+                                            <div class="feature-icon">✓</div>
+                                            <span>${amenity}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="property-sidebar">
+                            <div class="property-price">₹${property.price.toLocaleString('en-IN')}/month</div>
+                            <div class="property-info">
+                                <div class="info-item">
+                                    <span class="info-label">Type</span>
+                                    <span>${property.type.charAt(0).toUpperCase() + property.type.slice(1)}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Bedrooms</span>
+                                    <span>${property.bedrooms}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Bathrooms</span>
+                                    <span>${property.bathrooms}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Area</span>
+                                    <span>${property.area} sq.ft</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Furnished</span>
+                                    <span>${property.furnished}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Available From</span>
+                                    <span>${property.availableFrom}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Security Deposit</span>
+                                    <span>${property.depositAmount}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Maintenance</span>
+                                    <span>${property.maintenanceFee}</span>
+                                </div>
+                            </div>
+                            <div class="contact-form">
+                                <h3>Contact Owner</h3>
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" placeholder="Your name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="Your email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" id="phone" placeholder="Your phone number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" placeholder="I'm interested in this property..."></textarea>
+                                </div>
+                                <button class="submit-btn">Send Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('property-detail-container').innerHTML = propertyHTML;
+           
+            displaySimilarProperties(property);
+        }
+
+        
+        function displaySimilarProperties(currentProperty) {
+           
+            const similarProperties = properties.filter(p => 
+                p.id !== currentProperty.id && 
+                (p.location === currentProperty.location || p.type === currentProperty.type)
+            ).slice(0, 3); 
+            
+            const similarContainer = document.getElementById('similar-properties-container');
+            
+            if (similarProperties.length === 0) {
+                similarContainer.innerHTML = '<p>No similar properties found.</p>';
+                return;
+            }
+            
+            similarContainer.innerHTML = '';
+            
+            similarProperties.forEach(property => {
+                const propertyCard = document.createElement('div');
+                propertyCard.className = 'property-card';
+                propertyCard.innerHTML = `
+                    <div class="card-img" style="background-image: url('${property.image}')"></div>
+                    <div class="card-info">
+                        <h3 class="card-title">${property.title}</h3>
+                        <div class="card-location">${property.location.charAt(0).toUpperCase() + property.location.slice(1)}</div>
+                        <div class="card-price">₹${property.price.toLocaleString('en-IN')}/month</div>
+                        <div class="card-features">
+                            <span>${property.bedrooms} Beds</span>
+                            <span>${property.bathrooms} Baths</span>
+                            <span>${property.area} sq.ft</span>
+                        </div>
+                        <button onclick="window.location.href='property.html?id=${property.id}'" class="submit-btn" style="margin-top: 1rem;">View Details</button>
+                    </div>
+                `;
+                similarContainer.appendChild(propertyCard);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', displayPropertyDetails);
+    </script>
+</body>
+</html>
