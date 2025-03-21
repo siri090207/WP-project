@@ -736,7 +736,7 @@
                                     <label for="message">Message</label>
                                     <textarea id="message" placeholder="I'm interested in this property..."></textarea>
                                 </div>
-                                <button class="submit-btn">Send Message</button>
+                                <button class="submit-btn" onclick="check()">Send Message</button>
                             </div>
                         </div>
                     </div>
@@ -747,7 +747,9 @@
            
             displaySimilarProperties(property);
         }
-
+function check(){
+           alert("Message Sent Successfully");
+       }
         
         function displaySimilarProperties(currentProperty) {
            
