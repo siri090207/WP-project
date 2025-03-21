@@ -748,6 +748,21 @@
             displaySimilarProperties(property);
         }
 function check(){
+        let a = document.getElementById("name").value;
+        let c = document.getElementById("phone").value;
+        let email = document.getElementById("email").value;
+        if (a === "") {
+                alert("Name should not be empty");
+                return;
+            }
+        if (c.length !== 10 || isNaN(c)) {
+                alert("Invalid Mobile Number");
+                return;
+            }
+        if (!email.match(/^\S+@\S+\.\S+$/)) {
+                alert("Enter a valid email address.");
+                return;
+            }
            alert("Message Sent Successfully");
        }
         
